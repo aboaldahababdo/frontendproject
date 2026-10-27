@@ -1,0 +1,44 @@
+<div class="container my-4" style="max-width: 600px;">
+    <h2 class="mb-4">Add Product</h2>
+
+    <form #f="ngForm" (ngSubmit)="onSubmit()">
+        <div class="mb-3">
+            <label class="form-label">Title</label>
+            <input type="text" class="form-control" name="title" [(ngModel)]="product.title" required>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Description</label>
+            <textarea class="form-control" name="description" rows="3" [(ngModel)]="product.description"
+                required></textarea>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Price</label>
+            <input type="number" class="form-control" name="price" [(ngModel)]="product.price" required min="1">
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Category</label>
+            <select class="form-select" name="category" [(ngModel)]="product.category" required>
+                <option value="" disabled>Select section</option>
+                <option value="men">Men</option>
+                <option value="women">Women</option>
+                <option value="accessories">Accessories</option>
+            </select>
+        </div>
+
+        <div class="mb-3">
+            <label class="form-label">Image URL</label>
+            <input type="text" class="form-control" name="thumbnail" [(ngModel)]="product.thumbnail">
+        </div>
+
+        <button type="submit" class="btn btn-primary" [disabled]="f.invalid">
+            Add Product
+        </button>
+    </form>
+
+    @if (message) {
+    <div class="alert alert-info mt-3">{{ message }}</div>
+    }
+</div>

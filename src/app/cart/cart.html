@@ -1,0 +1,40 @@
+<div class="container my-4">
+  <h2 class="mb-4">Your Cart</h2>
+
+  @if (cart.items.length === 0) {
+    <div class="text-center py-5">
+      <p class="fs-5">Your cart is empty</p>
+      <a routerLink="/products/all" class="btn btn-danger">Go shopping</a>
+    </div>
+  } @else {
+    @for (item of cart.items; track $index) {
+      <div class="card mb-3 shadow-sm">
+        <div class="row g-0 align-items-center p-2">
+          <div class="col-3 col-md-2 text-center">
+            <img [src]="item.thumbnail" class="img-fluid" style="max-height: 100px; object-fit: contain" />
+          </div>
+
+          <div class="col-9 col-md-4">
+            <h6 class="mb-1">{{ item.title }}</h6>
+            <p class="mb-0 text-danger fw-bold">{{ item.price }} $</p>
+          </div>
+
+          <div class="col-6 col-md-3 mt-2 mt-md-0 d-flex align-items-center justify-content-center">
+            <button class="btn btn-outline-danger btn-sm" (click)="cart.decrease(item)">-</button>
+            <span class="mx-3 fw-bold">{{ item.quantity }}</span>
+            <button class="btn btn-outline-danger btn-sm" (click)="cart.increase(item)">+</button>
+          </div>
+
+          <div class="col-6 col-md-3 mt-2 mt-md-0 d-flex align-items-center justify-content-around">
+            <span class="fw-bold">{{ (item.price * item.quantity).toFixed(2) }} $</span>
+            <button class="btn btn-danger btn-sm" (click)="cart.remove(item)">Remove</button>
+          </div>
+        </div>
+      </div>
+    }
+
+    <div class="text-end mt-4">
+      <h4>Total: {{ cart.totalPrice.toFixed(2) }} $</h4>
+    </div>
+  }
+</div>

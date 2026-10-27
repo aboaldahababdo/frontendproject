@@ -1,0 +1,20 @@
+<div class="container my-4">
+  <div class="row g-4">
+    @for (p of products; track $index) {
+      <div class="col-12 col-sm-6 col-lg-3">
+        <div class="card h-100 shadow-sm">
+          <a [routerLink]="['/product', p.id]">
+            <img [src]="p.thumbnail" class="card-img-top p-3" style="height: 250px; object-fit: contain" />
+          </a>
+          <div class="card-body d-flex flex-column">
+            <h6 class="card-title">
+              <a [routerLink]="['/product', p.id]" class="text-dark text-decoration-none">{{ p.title }}</a>
+            </h6>
+            <p class="fw-bold text-danger mt-auto">{{ p.price }} $</p>
+            <button class="btn btn-danger" (click)="addToCart(p)">Add to cart</button>
+          </div>
+        </div>
+      </div>
+    }
+  </div>
+</div>

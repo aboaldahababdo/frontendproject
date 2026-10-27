@@ -1,0 +1,30 @@
+
+
+.Men{
+    background-image:url('/istockphoto-2183219028-612x612.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    width: 100%;
+    aspect-ratio: 4 / 3;    
+    
+} 
+
+.woMen{
+    background-image:url('/fashion-trends.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    width: 100%;
+    aspect-ratio: 4 / 3;    
+    
+}
+.acc{
+    background-image:url('/pexels-tkirkgoz-18699687.jpg') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    /* background-position: center; */
+    width: 100%;
+    aspect-ratio: 4 / 3;}
+
+    
