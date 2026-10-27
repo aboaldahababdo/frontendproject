@@ -8,6 +8,7 @@ import { AddProduct } from './add-product-component/add-product-component';
 import { ProductDetails } from './product-details/product-details';
 import { SignIn } from './sign-in/sign-in';
 import { SignUp } from './sign-up/sign-up';
+import { Contact } from './contact/contact';
 
 
 
@@ -22,5 +23,6 @@ export const routes: Routes = [
 { path: 'sign-up', component: SignUp },
 { path: 'add-product', component: AddProduct },
 { path: 'product/:id', component: ProductDetails },
+{ path: 'contact', component: Contact },
 {path:'**',component:NotFound}
 ];
